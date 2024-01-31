@@ -1,14 +1,18 @@
-body{
-    background-color: coral;
-    margin: 20px;
+*{
+    background-color:#f4d1ae;
+    margin: 0px;
+    color: #1b2021;
 }
-.mas{
+h1{
     font-size: 52px;
     text-align: center;
 }
+h2{
+    text-align: center;
+}
+/* el menu */
 .Menu{
     padding: 0px;
-    border: 1px solid black;
 }
 nav{
     display: flex;
@@ -16,16 +20,58 @@ nav{
     align-items: flex-end;
 }
 .navegadores{
-    color:black;
     text-decoration: none;
 }
 .navegadores:hover{
-    border: 2px solid aliceblue;
-    background-color: gray;
+    border: 3px solid #66101F;
 }
 .logo{
     width: 400px;
     height: 150px;
+}
+.mensaje{
+    border: 2px solid black;
+    padding: 20px;
+    margin: 60px 50px 0 50px;
+}
+.divisiones{
+    display: grid;
+    grid-template: 90% /repeat(4,24%);
+    gap: 15px;
+    padding: 15px;
+}
+.botoncito{
+    display: flex;
+    justify-content: center;
+}
+button{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: 2px solid pink;
+    padding: 30px 60px;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+}
+button:hover{
+    color: antiquewhite;
+}
+button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    background-color: bisque;
+    transform: skewX(35deg);
+    z-index: index -1;
+    transition: width 1s;
+}
+button:hover::before{
+    width: 150%;
+    
 }
 .producto{
     padding: 20px;
@@ -42,19 +88,32 @@ nav{
 }
 .ejemplos{
     display: grid;
-    border: 1px double black;
-    grid-template: 80%/repeat(3,15%);
+    border: 3px solid black;
+    grid-template: 80% 20%/repeat(3,20%);
     gap: 20%;
     padding: 30px;
-    grid-auto-flow:dense
+    margin: 50px;
 }
 .examples{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-
+    padding: 0px;
 }
-.examples:hover{
+.imagenes{
+    width: 300px;
+    height: 200px;
+    border: 3px solid #739072;
+}
+.imagenes:hover{
     filter: opacity(0.6);
     transform: scale(0.8);
+}
+.redes{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contactos{
+    margin-top:100px ;
 }
