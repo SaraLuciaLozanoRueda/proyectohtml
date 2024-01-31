@@ -1,0 +1,60 @@
+body{
+    background-color: coral;
+    margin: 20px;
+}
+.mas{
+    font-size: 52px;
+    text-align: center;
+}
+.Menu{
+    padding: 0px;
+    border: 1px solid black;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.navegadores{
+    color:black;
+    text-decoration: none;
+}
+.navegadores:hover{
+    border: 2px solid aliceblue;
+    background-color: gray;
+}
+.logo{
+    width: 400px;
+    height: 150px;
+}
+.producto{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.referencia{
+    width: 1000px;
+}
+.referencia:hover{
+    filter: opacity(0.6);
+    transform: scale(1.1);
+}
+.ejemplos{
+    display: grid;
+    border: 1px double black;
+    grid-template: 80%/repeat(3,15%);
+    gap: 20%;
+    padding: 30px;
+    grid-auto-flow:dense
+}
+.examples{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.examples:hover{
+    filter: opacity(0.6);
+    transform: scale(0.8);
+}
