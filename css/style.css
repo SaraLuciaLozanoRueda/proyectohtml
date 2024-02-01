@@ -1,7 +1,8 @@
 *{
-    background-color:#f4d1ae;
+    padding: 0;
     margin: 0px;
     color: #1b2021;
+    box-sizing: border-box;
 }
 h1{
     font-size: 52px;
@@ -10,9 +11,11 @@ h1{
 h2{
     text-align: center;
 }
-/* el menu */
+
+/* EL MENU*/
 .Menu{
     padding: 0px;
+    background-color: coral;
 }
 nav{
     display: flex;
@@ -29,6 +32,48 @@ nav{
     width: 400px;
     height: 150px;
 }
+
+/*DIV QUE TENDRA LA IMAGEN PRINCIPAL*/
+.producto{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.referencia{
+    width: 1000px;
+}
+.referencia:hover{
+    filter: opacity(0.6);
+    transform: scale(1.1);
+}
+
+/*ESTO ES PARA CATALOGO*/
+.ejemplos{
+    display: grid;
+    grid-template: 80% /repeat(3,20%);
+    gap: 20%;
+    padding: 30px;
+    margin: 50px;
+}
+.examples{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+.imagenes{
+    width: 300px;
+    height: 200px;
+    border: 3px solid #739072;
+    overflow: hidden;
+}
+.imagenes:hover{
+    filter: opacity(0.6);
+    transform: scale(0.8);
+}
+
+/*QUIENES SOMOS*/
 .mensaje{
     border: 2px solid black;
     padding: 20px;
@@ -73,47 +118,107 @@ button:hover::before{
     width: 150%;
     
 }
-.producto{
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.referencia{
-    width: 1000px;
-}
-.referencia:hover{
-    filter: opacity(0.6);
-    transform: scale(1.1);
-}
-.ejemplos{
-    display: grid;
-    border: 3px solid black;
-    grid-template: 80% 20%/repeat(3,20%);
-    gap: 20%;
-    padding: 30px;
-    margin: 50px;
-}
-.examples{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-}
-.imagenes{
-    width: 300px;
-    height: 200px;
-    border: 3px solid #739072;
-}
-.imagenes:hover{
-    filter: opacity(0.6);
-    transform: scale(0.8);
+
+/*CONTACTANOS*/
+.contactos{
+    margin-top:100px ;
 }
 .redes{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contactos{
-    margin-top:100px ;
+
+/* RESPONSIVE*/
+@media screen and (max-width:768px){
+    h1{
+        font-size: 20px;
+        text-align: center;
+    }
+    h2{
+        text-align: center;
+    }
+    .enlace{
+        position: absolute;
+    }
+    nav{
+        display: grid;
+    }
+    
+    /*DIV QUE TENDRA LA IMAGEN PRINCIPAL*/
+    .producto{
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .referencia{
+        width: 400px;
+    }
+    .referencia:hover{
+        filter: opacity(0.6);
+        transform: scale(1.1);
+    }
+    /*ESTO ES PARA CATALOGO*/
+    .ejemplos{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    .examples{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+    }
+    .imagenes{
+        width: 300px;
+        height: 200px;
+        border: 1px solid #739072;
+    }
+    .imagenes:hover{
+        filter: opacity(0.6);
+        transform: scale(0.8);
+    }
+
+    /*QUIENES SOMOS*/
+    .divisiones{
+        display: grid;
+        grid-template: repeat(5,20%)/100%;
+    }
+
+
+    .botoncito{
+    display: flex;
+    justify-content: center;
+    }
+    button{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: 2px solid pink;
+    padding: 30px 60px;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+    }
+    button:hover{
+    color: antiquewhite;
+    }
+    button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    width: 0;
+    height: 100%;
+    background-color: bisque;
+    transform: skewX(35deg);
+    z-index: index -1;
+    transition: width 1s;
+    }
+    button:hover::before{
+    width: 150%;
+    }
 }
+
