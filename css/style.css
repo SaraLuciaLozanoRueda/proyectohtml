@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     padding: 0;
     margin: 0px;
     color: #1b2021;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 h1{
     font-size: 52px;
@@ -13,24 +15,44 @@ h2{
 }
 
 /* EL MENU*/
-.Menu{
-    padding: 0px;
-    background-color: coral;
-}
 nav{
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
+   background-color: rgba(239,195,230) ;
+   height: 150px;
+   width: 100%;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 160px;
+    margin: 0 5px;
+}
+.enlace{
+    position: absolute;
 }
 .navegadores{
     text-decoration: none;
+    font-size: 20px;
+    padding: 7px 13px;
 }
 .navegadores:hover{
     border: 3px solid #66101F;
 }
 .logo{
-    width: 400px;
+    width: 500px;
     height: 150px;
+}
+.checkbtn{
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    display: none;
+}
+#check{
+    display: none;
 }
 
 /*DIV QUE TENDRA LA IMAGEN PRINCIPAL*/
@@ -41,7 +63,8 @@ nav{
     align-items: center;
 }
 .referencia{
-    width: 1000px;
+    background-size: cover;
+    height: calc(115vh - 80px);
 }
 .referencia:hover{
     filter: opacity(0.6);
@@ -55,17 +78,20 @@ nav{
     gap: 20%;
     padding: 30px;
     margin: 50px;
+    background: drop-shadow(#faecf2);
 }
 .examples{
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 0px;
+    object-fit: cover;
+    filter: drop-shadow(0 5px 5px #E5afd3);
 }
 .imagenes{
     width: 300px;
     height: 200px;
-    border: 3px solid #739072;
+    border-radius: 20px;
     overflow: hidden;
 }
 .imagenes:hover{
@@ -76,6 +102,7 @@ nav{
 /*QUIENES SOMOS*/
 .mensaje{
     border: 2px solid black;
+    box-shadow: inset 0.2px 0.2px 10px 4px #ffb0dd;
     padding: 20px;
     margin: 60px 50px 0 50px;
 }
@@ -97,10 +124,12 @@ button{
     padding: 30px 60px;
     position: relative;
     overflow: hidden;
+    border-radius: 100px;
     transition: color 1s;
+    background: white;
 }
 button:hover{
-    color: antiquewhite;
+    color: #e3b1c8;
 }
 button::before{
     content: '';
@@ -109,7 +138,7 @@ button::before{
     left: -50px;
     width: 0;
     height: 100%;
-    background-color: bisque;
+    background-color: #e3b1c8;
     transform: skewX(35deg);
     z-index: index -1;
     transition: width 1s;
@@ -130,7 +159,7 @@ button:hover::before{
 }
 
 /* RESPONSIVE*/
-@media screen and (max-width:768px){
+@media (max-width:768px){
     h1{
         font-size: 20px;
         text-align: center;
@@ -140,11 +169,37 @@ button:hover::before{
     }
     .enlace{
         position: absolute;
+        padding-left: 20px;
     }
-    nav{
-        display: grid;
+    .checkbtn{
+        display: block;
     }
-    
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 30vh;
+        top: 150px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        background:#fdcae1;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li{
+        font-size: 20px
+    }
+    li a.hover{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+
     /*DIV QUE TENDRA LA IMAGEN PRINCIPAL*/
     .producto{
         padding: 20px;
@@ -154,6 +209,7 @@ button:hover::before{
     }
     .referencia{
         width: 400px;
+        height: 400px;
     }
     .referencia:hover{
         filter: opacity(0.6);
@@ -163,7 +219,8 @@ button:hover::before{
     .ejemplos{
         display: flex;
         flex-direction: column;
-        row-gap: 10px;
+        row-gap: 30px;
+        background: drop-shadow(#faecf2)
     }
     .examples{
         display: flex;
@@ -174,7 +231,6 @@ button:hover::before{
     .imagenes{
         width: 300px;
         height: 200px;
-        border: 1px solid #739072;
     }
     .imagenes:hover{
         filter: opacity(0.6);
@@ -185,9 +241,8 @@ button:hover::before{
     .divisiones{
         display: grid;
         grid-template: repeat(5,20%)/100%;
+        gap: 100px;
     }
-
-
     .botoncito{
     display: flex;
     justify-content: center;
@@ -212,7 +267,7 @@ button:hover::before{
     left: -50px;
     width: 0;
     height: 100%;
-    background-color: bisque;
+    background-color: #e3b1c8;
     transform: skewX(35deg);
     z-index: index -1;
     transition: width 1s;
@@ -221,4 +276,3 @@ button:hover::before{
     width: 150%;
     }
 }
-
