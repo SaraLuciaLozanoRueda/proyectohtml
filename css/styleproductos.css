@@ -1,90 +1,210 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
+
+* {
     padding: 0;
     margin: 5px;
     color: #1b2021;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-.secundario{
+
+h1 {
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(239, 195, 230);
+    height: 150px;
+    width: 100%;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 160px;
+    margin: 0 5px;
+}
+
+.enlace {
+    position: absolute;
+}
+
+.navegadores {
+    text-decoration: none;
+    font-size: 20px;
+    padding: 7px 13px;
+}
+
+.navegadores:hover {
+    border: 3px solid #66101F;
+}
+
+.logo {
+    width: 500px;
+    height: 150px;
+}
+
+.checkbtn {
+    font-size: 30px;
+    float: right;
+    line-height: 80px;
+    margin-right: 30px;
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+.secundario {
     display: grid;
     grid-template: 100%/20% 30% 50%;
     border: 3px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 50px;
 }
-.laterales{
-    border: 1px solid black;
-    border-radius: 20px ;
+
+.laterales {
+    border-radius: 20px;
     display: flex;
     justify-content: center;
 }
-.laterales img{
+
+.laterales img {
     height: 150px;
     width: 150px;
+    border-radius: 20px;
+    opacity: .8;
 }
-.prime{
-    margin-left: 100px;
+
+.prime {
+    margin-left: 10px;
 }
-.fop{
+
+.fop {
     filter: drop-shadow(0 5px 5px #ffb0dd);
     border-radius: 20px;
     width: 300px;
-    transition: ease-in-out(.5s);
-    transform: translateY(10px);
+    transition: .5s ease-in-out;
+    transform: translateX(-10px);
 }
-.fop:hover{
-    transform: translateZ(12px);
+
+.fop:hover {
+    transform: translateY(-12px);
 }
-.descripcion{
+
+.descripcion {
     margin-left: 50px;
     width: 1000px;
 }
-button{
+
+button {
     width: 100px;
     background-color: green;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-button:hover{
+
+button:hover {
     background: lightgreen;
 }
-.comentarios{
+
+.comentarios {
     display: grid;
-    grid-template: repeat(3,33.3%)/90%;
+    grid-template: repeat(3, 33.333%)/100%;
     gap: 5px;
-    border: 1px solid black;
+    border: 3px solid black;
+    margin: 50px;
 }
-.comentario{
+
+.comentario {
     border: 1px solid black;
     margin: 10px;
 }
+
 /*RESPONSIVE*/
-@media (max-width:768px){
-    .secundario{
-        display: grid;
-        grid-template:repeat(2,50%)/90%;
+@media (max-width:768px) {
+    .enlace {
+        position: absolute;
+        padding-left: 20px;
+    }
+
+    .checkbtn {
+        display: block;
+    }
+
+    ul {
+        position: fixed;
+        width: 96%;
+        height: 10vh;
+        top: 150px;
+        left: -100%;
+        margin-left: 20px;
+        text-align: center;
+        transition: all .5s;
+        background: #fdcae1;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+
+    nav ul li {
+        font-size: 20px
+    }
+
+    li a.hover {
+        background: none;
+        color: red;
+    }
+
+    #check:checked~ul {
+        left: 0;
+    }
+
+    .secundario {
+        display: flex;
+        flex-direction: column;
         border: 3px solid black;
         justify-content: center;
         align-items: center;
     }
-    .fotos{
+
+    .fotos {
         display: flex;
-        column-gap: 5px;
-        margin: 0px;
+        align-items: flex-start;
     }
-    .laterales img{
-        height: 250px;
-        width: 180px;
+
+    .laterales img {
+        height: 200px;
+        width: 130px;
+        border-radius: 20px;
+        opacity: .8;
     }
-    .prime{
+
+    .laterales {
+        border-radius: 20px;
+        display: flex;
+        align-items: flex-start;
+    }
+
+    .prime {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 40px;
+        margin: 0px;
     }
-    .fop{
+
+    .fop {
         filter: drop-shadow(0 5px 5px #ffb0dd);
         border-radius: 20px;
         height: 400px;
@@ -92,31 +212,28 @@ button:hover{
         transition: ease-in-out(.5s);
         transform: translateY(10px);
     }
-    .fop:hover{
+
+    .fop:hover {
         transform: translateZ(12px);
     }
-    .descripcion{
+
+    .descripcion {
+        padding: 15px;
         margin-left: 50px;
-        width: 550px;
+        width: 450px;
     }
-    button{
+
+    button {
         width: 100px;
         background-color: green;
         letter-spacing: 2px;
         text-transform: uppercase;
     }
-    button:hover{
+
+    button:hover {
         background: lightgreen;
     }
-    .comentarios{
-        display: grid;
-        grid-template: repeat(3,33.3%)/90%;
-        gap: 5px;
-        border: 1px solid black;
-    }
-    .comentario{
-        border: 1px solid black;
-        margin: 10px;
-    } 
 
 }
+
+/*CAMBIO DE FOTOS*/
