@@ -197,4 +197,62 @@ contenedor del "contactenos" asegurando la posición de los logos en el div.En h
 }
 ```
 
-distancia entre la pagina de arriba y la de contactenos.
+distancia entre la pagina de arriba y la de contáctenos.
+
+he creado nuevos html que contendrán la descripción de el producto que esta en el catalogo de la pagina principal. Las determiné a todas con la misma estructura y bajo un solo css que me regularlos 6 productos
+
+**background: drop-shadow(#faecf2)**
+esta función hace que  el fondo de la imagen tome el color seleccionado.
+
+**overflow: hidden**;evita el desbordamiento osea que se salgan de los limites
+
+```
+.checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 30vh;
+        top: 150px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        background:#fdcae1;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li{
+        font-size: 20px
+    }
+    li a.hover{
+        background: none;
+        color: red;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+```
+
+**.checkbtn** se utiliza para un tipo de botón para que el usuario puede hacer clic para abrir el menú.
+**#check:checked ~ ul**: indica que cuando el elemento con el ID "check" está marcado
+
+**position: fixed** lo fija en la pantalla.
+**width: 100%** toma todo el ancho de la pantalla.
+**height: 30vh** establece la altura en el 30% del alto de la ventana.
+**top: 150px** lo coloca a 150 píxeles desde la parte superior.
+**left: -100%** lo coloca fuera de la pantalla inicialmente.
+**text-align:** center centra el contenido del menú.
+**transition: all .5s** aplica una transición de medio segundo a todas las propiedades CSS.
+**background:#fdcae1** establece un color de fondo.
+
+Aplica estilos a los elementos de la lista dentro del menú.
+**display: block** establece que cada elemento de la lista debe mostrarse como un bloque.
+**margin: 50px 0** establece un margen superior e inferior de 50 píxeles.
+**line-height: 30px** establece la altura de línea.
+
+# PARA MEJOR VISUALIZACION USAR EL RESPOSIVE 768*812
+
